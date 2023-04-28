@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: dhriti-deployment
+  
+
+  labels:
+
+    app: django
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: django
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: django
+
+    spec:
+
+      containers:
+
+      - name: dhriti
+
+        image: dhritik1/dhritikubernetes
+
+        ports:
+
+        - containerPort: 8000
